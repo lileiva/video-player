@@ -28,7 +28,7 @@ const Video = ({ videoURL }: { videoURL: string }): JSX.Element => {
           />
         </label>
       </div>
-      <video className="mx-auto h-full" id="video" src={videoURL} controls />
+      <video className="h-full mx-auto" id="video" src={videoURL} controls />
     </div>
   );
 };
@@ -51,6 +51,11 @@ const Home: NextPage = () => {
       {!videoURL && (
         <div className="flex flex-col mx-auto">
           <h1>Video Player</h1>
+          <input
+            type="text"
+            placeholder="Enter your video URL"
+            onChange={(evt) => setVideoURL(evt.target.value)}
+          ></input>
 
           <input
             type="file"
